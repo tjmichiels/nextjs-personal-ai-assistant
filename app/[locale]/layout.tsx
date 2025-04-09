@@ -3,12 +3,13 @@ import {notFound} from 'next/navigation'
 import Header from '@/components/Header'
 import {ReactNode} from 'react'
 
-type Props = {
-    children: ReactNode
+export default async function LocaleLayout({
+                                               children,
+                                               params
+                                           }: {
+    children: React.ReactNode
     params: { locale: string }
-}
-
-export default async function LocaleLayout({children, params}: Props) {
+}) {
     let messages
     try {
         messages = (await import(`@/messages/${params.locale}.json`)).default
@@ -18,7 +19,7 @@ export default async function LocaleLayout({children, params}: Props) {
 
     return (
         <NextIntlClientProvider locale={params.locale} messages={messages}>
-            <Header locale={params.locale} />
+            <Header locale={params.locale}/>
             {children}
         </NextIntlClientProvider>
     )
