@@ -1,13 +1,13 @@
 import {NextIntlClientProvider} from 'next-intl'
 import {notFound} from 'next/navigation'
 import Header from '@/components/Header'
-import {ReactNode} from 'react'
+import { ReactNode } from 'react'
 
 export default async function LocaleLayout({
                                                children,
-                                               params
+                                               params,
                                            }: {
-    children: React.ReactNode
+    children: ReactNode
     params: { locale: string }
 }) {
     let messages
