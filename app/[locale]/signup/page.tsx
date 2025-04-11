@@ -20,16 +20,12 @@ export default function SignUpPage() {
         })
     }, [])
 
-    // const signUp = async () => {
-    //     const { error } = await supabase.auth.signUp({ email, password })
-    //     alert(error ? error.message : t('signup_success'))
-    // }
+
     const signUp = async () => {
         const { error } = await supabase.auth.signUp({ email, password })
         if (error) return alert(error.message)
         setMessage(t('signup_success'))
         router.push('/login?signup=success')
-        // setTimeout(() => router.push('/login'), 2500)
     }
 
     return (

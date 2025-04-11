@@ -11,5 +11,9 @@
   "no_account": "Nog geen account?",
   "create_one": "Maak er een aan",
   "have_account": "Heb je al een account?",
-  "login_here": "Log hier in"
+  "login_here": "Log hier in",
+  "forgot_password": "Wachtwoord vergeten?",
+  "reset_sent": "Controleer je e-mail voor een link om je wachtwoord opnieuw in te stellen.",
+  "send_reset_link": "Verzend herstel-link",
+  "password_reset_success": "Je wachtwoord is succesvol gewijzigd. Je kunt nu inloggen."
 }

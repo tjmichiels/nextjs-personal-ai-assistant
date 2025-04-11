@@ -16,6 +16,7 @@ export default function LoginPage() {
     const searchParams = useSearchParams()
     const signupSuccess = searchParams.get('signup') === 'success'
     const confirmed = searchParams.get('confirmed') === 'true'
+    const resetSuccess = searchParams.get('reset') === 'success'
 
     // redirect als gebruiker ingelogd is
     useEffect(() => {
@@ -25,10 +26,6 @@ export default function LoginPage() {
     }, [])
 
 
-    // const login = async () => {
-    //     const { error } = await supabase.auth.signInWithPassword({ email, password })
-    //     alert(error ? error.message : t('login_success'))
-    // }
     const login = async () => {
         const { error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) return alert(error.message)
@@ -38,16 +35,25 @@ export default function LoginPage() {
 
     return (
         <div className="max-w-sm mx-auto mt-10 space-y-4">
+
             {signupSuccess && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded text-sm">
                     ✅ {t('signup_success')}
                 </div>
             )}
+
             {confirmed && (
                 <div className="...">
                     ✅ {t('email_confirmed')}
                 </div>
             )}
+
+            {resetSuccess && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded text-sm">
+                    ✅ {t('password_reset_success')}
+                </div>
+            )}
+
             <h2 className="text-xl font-bold">{t('login')}</h2>
             <input
                 type="email"
@@ -68,6 +74,11 @@ export default function LoginPage() {
                 {t('no_account')}{' '}
                 <Link href="/signup" className="text-blue-500 underline">
                     {t('create_one')}
+                </Link>
+            </p>
+            <p className="text-sm">
+                <Link href="/reset-password" className="text-blue-500 underline">
+                    {t('forgot_password')}
                 </Link>
             </p>
         </div>

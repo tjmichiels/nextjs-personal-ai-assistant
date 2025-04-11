@@ -11,5 +11,9 @@
   "no_account": "Don't have an account?",
   "create_one": "Create one",
   "have_account": "Already have an account?",
-  "login_here": "Log in here"
+  "login_here": "Log in here",
+  "forgot_password": "Forgot password?",
+  "reset_sent": "Check your email for a link to reset your password.",
+  "send_reset_link": "Send reset link",
+  "password_reset_success": "Your password has been successfully updated. You can now log in."
 }
