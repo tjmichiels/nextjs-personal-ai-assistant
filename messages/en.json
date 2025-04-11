@@ -2,5 +2,13 @@
   "welcome": "Welcome to your Avatar Assistant",
   "description": "Your personal AI-powered assistant at your service.",
   "login": "Login",
-  "signup": "Sign up"
+  "signup": "Sign up",
+  "email": "Email",
+  "password": "Password",
+  "login_success": "Successfully logged in!",
+  "signup_success": "Check your email to confirm!",
+  "no_account": "Don't have an account?",
+  "create_one": "Create one",
+  "have_account": "Already have an account?",
+  "login_here": "Log in here"
 }

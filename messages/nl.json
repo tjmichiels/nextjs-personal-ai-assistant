@@ -2,5 +2,13 @@
   "welcome": "Welkom bij je Avatar Assistent",
   "description": "Jouw persoonlijke, door AI aangedreven assistent staat voor je klaar.",
   "login": "Inloggen",
-  "signup": "Account aanmaken"
+  "signup": "Account aanmaken",
+  "email": "E-mailadres",
+  "password": "Wachtwoord",
+  "login_success": "Succesvol ingelogd!",
+  "signup_success": "Check je e-mail om te bevestigen!",
+  "no_account": "Nog geen account?",
+  "create_one": "Maak er een aan",
+  "have_account": "Heb je al een account?",
+  "login_here": "Log hier in"
 }
