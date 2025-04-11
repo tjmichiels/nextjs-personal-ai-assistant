@@ -30,6 +30,8 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import Header from '@/components/Header'
 
+/// <reference types="next" />
+
 export default async function LocaleLayout({
                                                children,
                                                params,
