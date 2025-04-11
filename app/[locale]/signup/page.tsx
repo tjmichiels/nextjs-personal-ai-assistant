@@ -31,21 +31,29 @@ export default function SignUpPage() {
     return (
         <div className="max-w-sm mx-auto mt-10 space-y-4">
             <h2 className="text-xl font-bold">{t('signup')}</h2>
-            <input
-                type="email"
-                placeholder={t('email')}
-                onChange={(e) => setEmail(e.target.value)}
-                className="border rounded p-2 w-full"
-            />
-            <input
-                type="password"
-                placeholder={t('password')}
-                onChange={(e) => setPassword(e.target.value)}
-                className="border rounded p-2 w-full"
-            />
-            <button onClick={signUp} className="bg-blue-500 text-white p-2 rounded w-full">
-                {t('signup')}
-            </button>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault()
+                    signUp()
+                }}
+                className="space-y-4"
+            >
+                <input
+                    type="email"
+                    placeholder={t('email')}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="border rounded p-2 w-full"
+                />
+                <input
+                    type="password"
+                    placeholder={t('password')}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="border rounded p-2 w-full"
+                />
+                <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">
+                    {t('signup')}
+                </button>
+            </form>
             <p className="text-sm">
                 {t('have_account')}{' '}
                 <Link href="/login" className="text-blue-500 underline">

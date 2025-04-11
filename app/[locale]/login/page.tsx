@@ -15,7 +15,6 @@ export default function LoginPage() {
 
     const searchParams = useSearchParams()
     const signupSuccess = searchParams.get('signup') === 'success'
-    // const confirmed = searchParams.get('confirmed') === 'true'
     const resetSuccess = searchParams.get('reset') === 'success'
 
     // redirect als gebruiker ingelogd is
@@ -49,21 +48,29 @@ export default function LoginPage() {
             )}
 
             <h2 className="text-xl font-bold">{t('login')}</h2>
-            <input
-                type="email"
-                placeholder={t('email')}
-                onChange={(e) => setEmail(e.target.value)}
-                className="border rounded p-2 w-full"
-            />
-            <input
-                type="password"
-                placeholder={t('password')}
-                onChange={(e) => setPassword(e.target.value)}
-                className="border rounded p-2 w-full"
-            />
-            <button onClick={login} className="bg-green-500 text-white p-2 rounded w-full">
-                {t('login')}
-            </button>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault()
+                    login()
+                }}
+                className="space-y-4"
+            >
+                <input
+                    type="email"
+                    placeholder={t('email')}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="border rounded p-2 w-full"
+                />
+                <input
+                    type="password"
+                    placeholder={t('password')}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="border rounded p-2 w-full"
+                />
+                <button type="submit" className="bg-green-500 text-white p-2 rounded w-full">
+                    {t('login')}
+                </button>
+            </form>
             <p className="text-sm">
                 {t('no_account')}{' '}
                 <Link href="/signup" className="text-blue-500 underline">

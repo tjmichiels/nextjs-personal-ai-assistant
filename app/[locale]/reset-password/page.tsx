@@ -28,7 +28,13 @@ export default function ResetPasswordPage() {
             {sent ? (
                 <p className="text-green-600 text-sm">✅ {t('reset_sent')}</p>
             ) : (
-                <>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        handleReset()
+                    }}
+                    className="space-y-4"
+                >
                     <input
                         type="email"
                         placeholder={t('email')}
@@ -38,7 +44,7 @@ export default function ResetPasswordPage() {
                     <button onClick={handleReset} className="bg-blue-500 text-white p-2 rounded w-full">
                         {t('send_reset_link')}
                     </button>
-                </>
+                </form>
             )}
             {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>

@@ -38,7 +38,13 @@ export default function ResetPasswordConfirmPage() {
             {error && <p className="text-red-500 text-sm">{error}</p>}
 
             {confirmed && (
-                <>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        updatePassword()
+                    }}
+                    className="space-y-4"
+                >
                     <input
                         type="password"
                         placeholder="New password"
@@ -48,7 +54,7 @@ export default function ResetPasswordConfirmPage() {
                     <button onClick={updatePassword} className="bg-blue-500 text-white p-2 rounded w-full">
                         Update password
                     </button>
-                </>
+                </form>
             )}
         </div>
     )
