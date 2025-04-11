@@ -7,7 +7,6 @@
   "password": "Password",
   "login_success": "Successfully logged in!",
   "signup_success": "Check your email to confirm!",
-  "email_confirmed": "Your email has been confirmed. You can now log in.",
   "no_account": "Don't have an account?",
   "create_one": "Create one",
   "have_account": "Already have an account?",

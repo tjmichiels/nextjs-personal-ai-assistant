@@ -13,9 +13,9 @@ export default function LocalePage() {
         const params = new URLSearchParams(hash.slice(1))
         const type = params.get('type')
 
-        if (type === 'signup') {
-            router.replace('/login?confirmed=true')
-        }
+        // if (type === 'signup') {
+        //     router.replace('/login?confirmed=true')
+        // }
 
         if (type === 'recovery') {
             router.replace('/reset-password-confirm' + window.location.hash)

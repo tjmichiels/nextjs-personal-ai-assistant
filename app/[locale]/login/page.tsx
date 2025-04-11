@@ -15,7 +15,7 @@ export default function LoginPage() {
 
     const searchParams = useSearchParams()
     const signupSuccess = searchParams.get('signup') === 'success'
-    const confirmed = searchParams.get('confirmed') === 'true'
+    // const confirmed = searchParams.get('confirmed') === 'true'
     const resetSuccess = searchParams.get('reset') === 'success'
 
     // redirect als gebruiker ingelogd is
@@ -39,12 +39,6 @@ export default function LoginPage() {
             {signupSuccess && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded text-sm">
                     ✅ {t('signup_success')}
-                </div>
-            )}
-
-            {confirmed && (
-                <div className="...">
-                    ✅ {t('email_confirmed')}
                 </div>
             )}
 
