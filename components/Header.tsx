@@ -8,6 +8,7 @@ import {routing} from '@/i18n/routing'
 import {useEffect, useState} from 'react'
 import {supabase} from '@/lib/supabaseClient'
 import {User} from '@supabase/supabase-js'
+import { useTranslations } from 'next-intl'
 
 export default function Header({locale}: { locale: string }) {
     const pathname = usePathname()
@@ -15,6 +16,7 @@ export default function Header({locale}: { locale: string }) {
     const {theme, setTheme} = useTheme()
     const [user, setUser] = useState<User | null>(null)
     const [dropdownOpen, setDropdownOpen] = useState(false)
+    const t = useTranslations()
 
     useEffect(() => {
         supabase.auth.getUser().then(({data}) => {
@@ -35,7 +37,7 @@ export default function Header({locale}: { locale: string }) {
 
     return (
         <header className="flex items-center justify-between px-4 py-2 border-b">
-            <Link href={`/${locale}`} className="font-bold text-xl">Privatar</Link>
+            <Link href={`/${locale}`} className="font-bold text-xl">{t('project_name')}</Link>
 
             <div className="flex gap-4 items-center">
                 {/* 🌍 Locale switcher */}
@@ -66,7 +68,7 @@ export default function Header({locale}: { locale: string }) {
                 {/* 👤 Auth status */}
                 {!user ? (
                     <Link href={`/${locale}/login`} className="border px-2 py-1 rounded">
-                        Login
+                        {t('login')}
                     </Link>
                 ) : (
                     <div className="relative">
@@ -78,7 +80,6 @@ export default function Header({locale}: { locale: string }) {
                             👤
                         </button>
                         {dropdownOpen && (
-                            // <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-zinc-800 border rounded shadow p-4 text-sm z-10">
                             <div
                                 className="absolute right-0 mt-2 w-64 border rounded shadow p-4 text-sm z-10 bg-[var(--background)] text-[var(--foreground)]">
                                 <p className="text-gray-500 dark:text-gray-400 truncate">{user.email}</p>
@@ -87,7 +88,7 @@ export default function Header({locale}: { locale: string }) {
                                     onClick={handleLogout}
                                     className="w-full text-left text-red-600 hover:underline"
                                 >
-                                    Log uit
+                                    {t('logout')}
                                 </button>
                             </div>
                         )}

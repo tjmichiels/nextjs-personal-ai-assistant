@@ -1,7 +1,9 @@
 {
+  "project_name": "Privatar",
   "welcome": "Welcome to your Avatar Assistant",
   "description": "Your personal AI-powered assistant at your service.",
   "login": "Login",
+  "logout": "Log out",
   "signup": "Sign up",
   "email": "Email",
   "password": "Password",
