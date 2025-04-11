@@ -51,3 +51,7 @@ export default async function LocaleLayout({
         </NextIntlClientProvider>
     )
 }
+
+export function generateStaticParams() {
+    return [{ locale: 'en' }, { locale: 'nl' }]
+}
