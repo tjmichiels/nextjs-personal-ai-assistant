@@ -15,5 +15,5 @@
   "forgot_password": "Forgot password?",
   "reset_sent": "Check your email for a link to reset your password.",
   "send_reset_link": "Send reset link",
-  "password_reset_success": "Your password has been successfully updated. You can now log in."
+  "password_reset_success": "Your password has been successfully updated."
 }

@@ -15,5 +15,5 @@
   "forgot_password": "Wachtwoord vergeten?",
   "reset_sent": "Controleer je e-mail voor een link om je wachtwoord opnieuw in te stellen.",
   "send_reset_link": "Verzend herstel-link",
-  "password_reset_success": "Je wachtwoord is succesvol gewijzigd. Je kunt nu inloggen."
+  "password_reset_success": "Je wachtwoord is succesvol gewijzigd."
 }
