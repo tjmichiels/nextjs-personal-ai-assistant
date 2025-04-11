@@ -22,6 +22,11 @@ export default function LocalePage() {
             return
         }
 
+        if (type === 'signup') {
+            // je bent nu automatisch ingelogd → redirect naar homepage mét feedback
+            router.replace('/?success=confirmed')
+        }
+
         const success = searchParams.get('success')
         if (success === 'confirmed') {
             setShowMessage(t('email_confirmed'))
@@ -30,33 +35,6 @@ export default function LocalePage() {
             setShowMessage(t('password_reset_success'))
         }
     }, [searchParams, router, t])
-
-    // useEffect(() => {
-    //     const hash = window.location.hash
-    //
-    //     const params = new URLSearchParams(hash.slice(1))
-    //     const type = params.get('type')
-    //
-    //     // if (type === 'signup') {
-    //     //     router.replace('/login?confirmed=true')
-    //     // }
-    //
-    //     if (type === 'recovery') {
-    //         router.replace('/reset-password-confirm' + window.location.hash)
-    //     }
-    // }, [])
-    //
-    // useEffect(() => {
-    //     const type = searchParams.get('success')
-    //
-    //     if (type === 'confirmed') {
-    //         setShowMessage(t('email_confirmed'))
-    //     }
-    //
-    //     if (type === 'reset') {
-    //         setShowMessage(t('password_reset_success'))
-    //     }
-    // }, [searchParams, t])
 
 
     return (
