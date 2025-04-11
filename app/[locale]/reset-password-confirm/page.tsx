@@ -29,7 +29,7 @@ export default function ResetPasswordConfirmPage() {
         const { error } = await supabase.auth.updateUser({ password })
         if (error) return setError(error.message)
 
-        router.push('/login?reset=success')
+        router.push('/?success=reset')
     }
 
     return (
