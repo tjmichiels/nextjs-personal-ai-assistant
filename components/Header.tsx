@@ -1,14 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import {usePathname} from '@/i18n/navigation'
-import {useRouter} from '@/i18n/navigation'
+import {usePathname, useRouter} from '@/i18n/navigation'
 import {useTheme} from 'next-themes'
 import {routing} from '@/i18n/routing'
 import {useEffect, useState} from 'react'
 import {supabase} from '@/lib/supabaseClient'
 import {User} from '@supabase/supabase-js'
-import { useTranslations } from 'next-intl'
+import {useTranslations} from 'next-intl'
 
 export default function Header({locale}: { locale: string }) {
     const pathname = usePathname()
@@ -35,6 +34,18 @@ export default function Header({locale}: { locale: string }) {
         router.refresh() // herlaad pagina om auth status te resetten
     }
 
+    const handleLocaleChange = (newLocale: string) => {
+        const segments = pathname.split('/')
+        if (routing.locales.includes(segments[1])) {
+            segments[1] = newLocale
+        } else {
+            segments.unshift(newLocale)
+        }
+        const newPath = segments.join('/') || '/'
+        router.push(newPath)
+    }
+
+
     return (
         <header className="flex items-center justify-between px-4 py-2 border-b">
             <Link href={`/${locale}`} className="font-bold text-xl">{t('project_name')}</Link>
@@ -43,19 +54,30 @@ export default function Header({locale}: { locale: string }) {
                 {/* 🌍 Locale switcher */}
                 <select
                     value={locale}
-                    onChange={(e) => {
-                        const newLocale = e.target.value
-                        const currentLocale = locale
-                        const pathWithoutLocale = pathname.replace(new RegExp(`^/${currentLocale}`), '')
-                        const newPath = `/${newLocale}${pathWithoutLocale}`
-                        router.push(newPath)
-                    }}
+                    onChange={(e) => handleLocaleChange(e.target.value)}
                     className="border px-2 py-1 rounded"
                 >
                     {routing.locales.map((loc) => (
-                        <option key={loc} value={loc}>{loc.toUpperCase()}</option>
+                        <option key={loc} value={loc}>
+                            {loc.toUpperCase()}
+                        </option>
                     ))}
                 </select>
+                {/*<select*/}
+                {/*    value={locale}*/}
+                {/*    onChange={(e) => {*/}
+                {/*        const newLocale = e.target.value*/}
+                {/*        const currentLocale = locale*/}
+                {/*        const pathWithoutLocale = pathname.replace(new RegExp(`^/${currentLocale}`), '')*/}
+                {/*        const newPath = `/${newLocale}${pathWithoutLocale}`*/}
+                {/*        router.push(newPath)*/}
+                {/*    }}*/}
+                {/*    className="border px-2 py-1 rounded"*/}
+                {/*>*/}
+                {/*    {routing.locales.map((loc) => (*/}
+                {/*        <option key={loc} value={loc}>{loc.toUpperCase()}</option>*/}
+                {/*    ))}*/}
+                {/*</select>*/}
 
                 {/* 🌗 Dark mode toggle */}
                 <button
