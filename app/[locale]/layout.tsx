@@ -30,30 +30,28 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import Header from '@/components/Header'
 
-/// <reference types="next" />
+type Params = Promise<{ locale: string }>
 
 export default async function LocaleLayout({
                                                children,
                                                params,
                                            }: {
     children: ReactNode
-    params: { locale: string }
+    params: Params
 }) {
+    const { locale } = await params
+
     let messages
     try {
-        messages = (await import(`@/messages/${params.locale}.json`)).default
+        messages = (await import(`@/messages/${locale}.json`)).default
     } catch {
         notFound()
     }
 
     return (
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
-            <Header locale={params.locale} />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header locale={locale} />
             {children}
         </NextIntlClientProvider>
     )
-}
-
-export function generateStaticParams() {
-    return [{ locale: 'en' }, { locale: 'nl' }]
 }
