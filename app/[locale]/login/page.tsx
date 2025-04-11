@@ -12,8 +12,10 @@ export default function LoginPage() {
     const [password, setPassword] = useState('')
     const t = useTranslations() // Localisatie
     const router = useRouter()
+
     const searchParams = useSearchParams()
     const signupSuccess = searchParams.get('signup') === 'success'
+    const confirmed = searchParams.get('confirmed') === 'true'
 
     // redirect als gebruiker ingelogd is
     useEffect(() => {
@@ -39,6 +41,11 @@ export default function LoginPage() {
             {signupSuccess && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded text-sm">
                     ✅ {t('signup_success')}
+                </div>
+            )}
+            {confirmed && (
+                <div className="...">
+                    ✅ {t('email_confirmed')}
                 </div>
             )}
             <h2 className="text-xl font-bold">{t('login')}</h2>
