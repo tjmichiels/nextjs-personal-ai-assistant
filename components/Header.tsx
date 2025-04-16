@@ -34,18 +34,6 @@ export default function Header({locale}: { locale: string }) {
         router.refresh() // herlaad pagina om auth status te resetten
     }
 
-    const handleLocaleChange = (newLocale: string) => {
-        const segments = pathname.split('/')
-        if (routing.locales.includes(segments[1])) {
-            segments[1] = newLocale
-        } else {
-            segments.unshift(newLocale)
-        }
-        const newPath = segments.join('/') || '/'
-        router.push(newPath)
-    }
-
-
     return (
         <header className="flex items-center justify-between px-4 py-2 border-b">
             <Link href={`/${locale}`} className="font-bold text-xl">{t('project_name')}</Link>
@@ -54,30 +42,25 @@ export default function Header({locale}: { locale: string }) {
                 {/* 🌍 Locale switcher */}
                 <select
                     value={locale}
-                    onChange={(e) => handleLocaleChange(e.target.value)}
+                    onChange={(e) => {
+                        const newLocale = e.target.value
+                        if (routing.locales.includes(newLocale as any)) {
+                            const typedLocale = newLocale as (typeof routing)['locales'][number]
+                            const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), '')
+                            const newPath = `/${typedLocale}${pathWithoutLocale}`
+                            router.push(newPath)
+                        }
+                        const currentLocale = locale
+                        const pathWithoutLocale = pathname.replace(new RegExp(`^/${currentLocale}`), '')
+                        const newPath = `/${newLocale}${pathWithoutLocale}`
+                        router.push(newPath)
+                    }}
                     className="border px-2 py-1 rounded"
                 >
                     {routing.locales.map((loc) => (
-                        <option key={loc} value={loc}>
-                            {loc.toUpperCase()}
-                        </option>
+                        <option key={loc} value={loc}>{loc.toUpperCase()}</option>
                     ))}
                 </select>
-                {/*<select*/}
-                {/*    value={locale}*/}
-                {/*    onChange={(e) => {*/}
-                {/*        const newLocale = e.target.value*/}
-                {/*        const currentLocale = locale*/}
-                {/*        const pathWithoutLocale = pathname.replace(new RegExp(`^/${currentLocale}`), '')*/}
-                {/*        const newPath = `/${newLocale}${pathWithoutLocale}`*/}
-                {/*        router.push(newPath)*/}
-                {/*    }}*/}
-                {/*    className="border px-2 py-1 rounded"*/}
-                {/*>*/}
-                {/*    {routing.locales.map((loc) => (*/}
-                {/*        <option key={loc} value={loc}>{loc.toUpperCase()}</option>*/}
-                {/*    ))}*/}
-                {/*</select>*/}
 
                 {/* 🌗 Dark mode toggle */}
                 <button
