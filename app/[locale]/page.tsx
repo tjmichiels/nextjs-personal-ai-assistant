@@ -89,7 +89,7 @@ export default function LocalePage() {
                 <div className="max-w-3xl mx-auto bg-[var(--background)] border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-md p-6">
                     <h2 className="text-xl font-semibold mb-4">Stel een vraag aan je assistent</h2>
 
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>  
                         <div className="mb-4">
                             <textarea
                                 className="w-full p-3 bg-[var(--background)] text-[var(--foreground)] border border-zinc-300 dark:border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
