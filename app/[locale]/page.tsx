@@ -59,7 +59,7 @@ export default function LocalePage() {
 
         // Mockup response
         setTimeout(() => {
-            setResult(`Dit is een voorbeeld resultaat voor je prompt: "${prompt}"`)
+            setResult(`${t('example_response')} "${prompt}"`)
             setIsLoading(false)
         }, 1000)
     }
@@ -67,7 +67,7 @@ export default function LocalePage() {
     if (loading) {
         return (
             <main className="p-6 text-center">
-                <div className="animate-pulse">Laden...</div>
+                <div className="animate-pulse">{t('loading')}</div>
             </main>
         )
     }
@@ -87,7 +87,7 @@ export default function LocalePage() {
 
             {isAuthenticated && (
                 <div className="max-w-3xl mx-auto bg-[var(--background)] border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-md p-6">
-                    <h2 className="text-xl font-semibold mb-4">Stel een vraag aan je assistent</h2>
+                    <h2 className="text-xl font-semibold mb-4">{t('ask_assistant')}</h2>
 
                     <form onSubmit={handleSubmit}>  
                         <div className="mb-4">
@@ -95,7 +95,7 @@ export default function LocalePage() {
                                 className="w-full p-3 bg-[var(--background)] text-[var(--foreground)] border border-zinc-300 dark:border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
                                 value={prompt}
                                 onChange={(e) => setPrompt(e.target.value)}
-                                placeholder="Typ hier je vraag of prompt..."
+                                placeholder={t('prompt_placeholder')}
                                 required
                             />
                         </div>
@@ -105,13 +105,13 @@ export default function LocalePage() {
                             disabled={isLoading || !prompt.trim()}
                             className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition"
                         >
-                            {isLoading ? 'Bezig...' : 'Verzenden'}
+                            {isLoading ? t('loading_action') : t('send')}
                         </button>
                     </form>
 
                     {result && (
                         <div className="mt-6 p-4 bg-zinc-50 dark:bg-zinc-800 rounded-md border border-zinc-200 dark:border-zinc-700">
-                            <h3 className="font-medium mb-2">Antwoord:</h3>
+                            <h3 className="font-medium mb-2">{t('answer')}</h3>
                             <p>{result}</p>
                         </div>
                     )}

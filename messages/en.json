@@ -17,5 +17,12 @@
   "forgot_password": "Forgot password?",
   "reset_sent": "Check your email for a link to reset your password.",
   "send_reset_link": "Send reset link",
-  "password_reset_success": "Your password has been successfully updated."
+  "password_reset_success": "Your password has been successfully updated.",
+  "loading": "Loading...",
+  "loading_action": "Loading...",
+  "send": "Send",
+  "ask_assistant": "Ask your assistant a question",
+  "prompt_placeholder": "Type your question or prompt here...",
+  "answer": "Answer:",
+  "example_response": "This is an example response for your prompt:"
 }
