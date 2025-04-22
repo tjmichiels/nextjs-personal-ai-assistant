@@ -139,9 +139,9 @@
                         )}
 
                         {result && !error && (
-                            <div className="mt-6 p-4 bg-zinc-50 dark:bg-zinc-800 rounded-md border border-zinc-200 dark:border-zinc-700">
-                                <h3 className="font-medium mb-2">{t('answer')}</h3>
-                                <p className="whitespace-pre-wrap">{result}</p>
+                            <div className="mt-6 p-4 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-md !bg-opacity-100">
+                                <h3 className="font-medium mb-2 text-black dark:text-white">{t('answer')}</h3>
+                                <p className="whitespace-pre-wrap text-black dark:text-gray-200">{result}</p>
                             </div>
                         )}
                     </div>
