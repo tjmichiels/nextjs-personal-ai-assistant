@@ -24,5 +24,7 @@
   "ask_assistant": "Stel een vraag aan je assistent",
   "prompt_placeholder": "Typ hier je vraag of prompt...",
   "answer": "Antwoord:",
-  "example_response": "Dit is een voorbeeld resultaat voor je prompt:"
+  "example_response": "Dit is een voorbeeld resultaat voor je prompt:",
+  "error_message": "Er is een fout opgetreden tijdens het verwerken van je verzoek.",
+  "error": "Fout"
 }

@@ -61,13 +61,13 @@
                 setError(null)
 
                 try {
-                    const response = await fetch('/api/ollama', {
+                    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/chat`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            prompt: prompt,
+                            prompt,
                             model: selectedModel,
                         }),
                     })
@@ -75,13 +75,14 @@
                     const data = await response.json()
 
                     if (!response.ok) {
-                        throw new Error(data.error || 'Failed to get response')
+                        // Gebruik backend error indien beschikbaar
+                        throw new Error(data.error || 'Unknown error occurred')
                     }
 
                     setResult(data.response)
-                } catch (error) {
-                    console.error('Error:', error)
-                    setError(t('error_message') || 'Error processing your request')
+                } catch (err: any) {
+                    console.error('Error:', err)
+                    setError(err.message || t('error_message'))
                 } finally {
                     setIsLoading(false)
                 }
