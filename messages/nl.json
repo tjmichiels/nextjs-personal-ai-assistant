@@ -17,5 +17,12 @@
   "forgot_password": "Wachtwoord vergeten?",
   "reset_sent": "Controleer je e-mail voor een link om je wachtwoord opnieuw in te stellen.",
   "send_reset_link": "Verzend herstel-link",
-  "password_reset_success": "Je wachtwoord is succesvol gewijzigd."
+  "password_reset_success": "Je wachtwoord is succesvol gewijzigd.",
+  "loading": "Laden...",
+  "loading_action": "Bezig...",
+  "send": "Verzenden",
+  "ask_assistant": "Stel een vraag aan je assistent",
+  "prompt_placeholder": "Typ hier je vraag of prompt...",
+  "answer": "Antwoord:",
+  "example_response": "Dit is een voorbeeld resultaat voor je prompt:"
 }
