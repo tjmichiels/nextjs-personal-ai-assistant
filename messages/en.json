@@ -24,5 +24,7 @@
   "ask_assistant": "Ask your assistant a question",
   "prompt_placeholder": "Type your question or prompt here...",
   "answer": "Answer:",
-  "example_response": "This is an example response for your prompt:"
+  "example_response": "This is an example response for your prompt:",
+  "error_message": "An error occurred while processing your request.",
+  "error": "Error"
 }
