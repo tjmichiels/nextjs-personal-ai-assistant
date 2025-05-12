@@ -1,5 +1,12 @@
 'use client'
 
+declare global {
+    interface Window {
+        SpeechRecognition: any
+        webkitSpeechRecognition: any
+    }
+}
+
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/i18n/navigation'
@@ -14,7 +21,6 @@ export default function LocalePage() {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
     const [loading, setLoading] = useState<boolean>(true)
 
-    // States voor de prompt-omgeving
     const [prompt, setPrompt] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [result, setResult] = useState<string | null>(null)
@@ -22,7 +28,6 @@ export default function LocalePage() {
     const [selectedModel, setSelectedModel] = useState('llama2:latest')
 
     useEffect(() => {
-        // Check authentication status
         const checkAuth = async () => {
             setLoading(true)
             const { data: { session } } = await supabase.auth.getSession()
@@ -32,7 +37,6 @@ export default function LocalePage() {
 
         checkAuth()
 
-        // Handle URL params and redirects
         const hash = window.location.hash
         const hashParams = new URLSearchParams(hash.slice(1))
         const type = hashParams.get('type')
@@ -87,6 +91,31 @@ export default function LocalePage() {
         }
     }
 
+    const startListening = () => {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+        if (!SpeechRecognition) {
+            setError('Deze browser ondersteunt geen spraakherkenning.')
+            return
+        }
+
+        const recognition = new SpeechRecognition()
+        recognition.lang = 'nl-NL'
+        recognition.interimResults = false
+        recognition.maxAlternatives = 1
+
+        recognition.onresult = (event: SpeechRecognitionEvent) => {
+            const transcript = event.results[0][0].transcript
+            setPrompt(transcript)
+        }
+
+        recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+            console.error('Spraakherkenning fout:', event.error)
+            setError(`Spraakherkenning is mislukt: ${event.error}`)
+        }
+
+        recognition.start()
+    }
+
     if (loading) {
         return (
             <main className="p-6 text-center">
@@ -126,28 +155,39 @@ export default function LocalePage() {
                                 <option value="tinyllama:latest">TinyLlama</option>
                                 <option value="llama2:latest">Llama 2</option>
                                 <option value="llama3.2:latest">Llama 3.2</option>
+                                <option value="llama3:latest">Llama 3</option>
                             </select>
                         </div>
                     </div>
 
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
-                                    <textarea
-                                        className="w-full p-3 bg-[var(--background)] text-[var(--foreground)] border border-zinc-300 dark:border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
-                                        value={prompt}
-                                        onChange={(e) => setPrompt(e.target.value)}
-                                        placeholder={t('prompt_placeholder')}
-                                        required
-                                    />
+                            <textarea
+                                className="w-full p-3 bg-[var(--background)] text-[var(--foreground)] border border-zinc-300 dark:border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
+                                value={prompt}
+                                onChange={(e) => setPrompt(e.target.value)}
+                                placeholder={t('prompt_placeholder')}
+                                required
+                            />
                         </div>
 
-                        <button
-                            type="submit"
-                            disabled={isLoading || !prompt.trim()}
-                            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition"
-                        >
-                            {isLoading ? t('loading_action') : t('send')}
-                        </button>
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                            <button
+                                type="submit"
+                                disabled={isLoading || !prompt.trim()}
+                                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition mb-2 sm:mb-0"
+                            >
+                                {isLoading ? t('loading_action') : t('send')}
+                            </button>
+
+                            <button
+                                type="button"
+                                onClick={startListening}
+                                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+                            >
+                                 {t('Spreek in') || 'Spreek in'}
+                            </button>
+                        </div>
                     </form>
 
                     {error && (
@@ -162,8 +202,8 @@ export default function LocalePage() {
                             <div className="flex justify-between items-center mb-2">
                                 <h3 className="font-medium text-black dark:text-white">{t('answer')}</h3>
                                 <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                                            {selectedModel}
-                                        </span>
+                                    {selectedModel}
+                                </span>
                             </div>
                             <p className="whitespace-pre-wrap text-black dark:text-gray-200">{result}</p>
                         </div>
