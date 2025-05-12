@@ -20,6 +20,7 @@ export default function LocalePage() {
     const [error, setError] = useState<string | null>(null)
     const [selectedModel, setSelectedModel] = useState('llama2:latest')
     const [isListening, setIsListening] = useState(false)
+    const [audioSrc, setAudioSrc] = useState<string | null>(null)
 
     useEffect(() => {
         const checkAuth = async () => {
@@ -57,6 +58,7 @@ export default function LocalePage() {
         setIsLoading(true)
         setResult(null)
         setError(null)
+        setAudioSrc(null)
 
         try {
             const response = await fetch('/api/ollama', {
@@ -77,6 +79,7 @@ export default function LocalePage() {
             }
 
             setResult(data.response)
+            setAudioSrc(data.audio)
         } catch (error) {
             console.error('Error:', error)
             setError(t('error_message') || 'Error processing your request')
@@ -189,7 +192,7 @@ export default function LocalePage() {
                                     isListening ? 'bg-green-800' : 'bg-green-600 hover:bg-green-700'
                                 }`}
                             >
-                                 {isListening ? (t('Luistert...') || 'Luistert...') : (t('Spreek in') || 'Spreek in')}
+                                {isListening ? (t('Luistert...') || 'Luistert...') : (t('Spreek in') || 'Spreek in')}
                             </button>
                         </div>
                     </form>
@@ -209,7 +212,16 @@ export default function LocalePage() {
                                     {selectedModel}
                                 </span>
                             </div>
-                            <p className="whitespace-pre-wrap text-black dark:text-gray-200">{result}</p>
+                            <p className="whitespace-pre-wrap text-black dark:text-gray-200 mb-2">{result}</p>
+
+                            {audioSrc && (
+                                <button
+                                    onClick={() => new Audio(audioSrc).play()}
+                                    className="text-sm text-blue-600 hover:underline"
+                                >
+                                    🗣️ Speel antwoord af
+                                </button>
+                            )}
                         </div>
                     )}
                 </div>
