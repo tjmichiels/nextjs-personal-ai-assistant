@@ -1,12 +1,5 @@
 'use client'
 
-declare global {
-    interface Window {
-        SpeechRecognition: any
-        webkitSpeechRecognition: any
-    }
-}
-
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/i18n/navigation'
@@ -26,6 +19,7 @@ export default function LocalePage() {
     const [result, setResult] = useState<string | null>(null)
     const [error, setError] = useState<string | null>(null)
     const [selectedModel, setSelectedModel] = useState('llama2:latest')
+    const [isListening, setIsListening] = useState(false)
 
     useEffect(() => {
         const checkAuth = async () => {
@@ -103,14 +97,22 @@ export default function LocalePage() {
         recognition.interimResults = false
         recognition.maxAlternatives = 1
 
+        setIsListening(true)
+
         recognition.onresult = (event: SpeechRecognitionEvent) => {
             const transcript = event.results[0][0].transcript
             setPrompt(transcript)
+            setIsListening(false)
         }
 
         recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
             console.error('Spraakherkenning fout:', event.error)
             setError(`Spraakherkenning is mislukt: ${event.error}`)
+            setIsListening(false)
+        }
+
+        recognition.onend = () => {
+            setIsListening(false)
         }
 
         recognition.start()
@@ -183,9 +185,11 @@ export default function LocalePage() {
                             <button
                                 type="button"
                                 onClick={startListening}
-                                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+                                className={`px-4 py-2 rounded-md transition text-white ${
+                                    isListening ? 'bg-green-800' : 'bg-green-600 hover:bg-green-700'
+                                }`}
                             >
-                                 {t('Spreek in') || 'Spreek in'}
+                                 {isListening ? (t('Luistert...') || 'Luistert...') : (t('Spreek in') || 'Spreek in')}
                             </button>
                         </div>
                     </form>
