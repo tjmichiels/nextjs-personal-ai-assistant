@@ -21,6 +21,7 @@ export default function LocalePage() {
     const [selectedModel, setSelectedModel] = useState('llama2:latest')
     const [isListening, setIsListening] = useState(false)
     const [audioSrc, setAudioSrc] = useState<string | null>(null)
+    const [showOnboarding, setShowOnboarding] = useState(false)
 
     useEffect(() => {
         const checkAuth = async () => {
@@ -52,6 +53,20 @@ export default function LocalePage() {
             setShowMessage(t('password_reset_success'))
         }
     }, [searchParams, router, t])
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && isAuthenticated) {
+            const hasSeenOnboarding = localStorage.getItem('hasSeenOnboarding')
+            if (!hasSeenOnboarding) {
+                setShowOnboarding(true)
+            }
+        }
+    }, [isAuthenticated])
+
+    const handleDismissOnboarding = () => {
+        localStorage.setItem('hasSeenOnboarding', 'true')
+        setShowOnboarding(false)
+    }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -131,6 +146,25 @@ export default function LocalePage() {
 
     return (
         <main className="p-6">
+            {showOnboarding && (
+                <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
+                    <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-lg max-w-md p-6 space-y-4 text-center text-zinc-800 dark:text-white">
+                        <h2 className="text-2xl font-bold mb-4">Welkom bij je AI Coach 👋</h2>
+                        <ul className="space-y-3 text-left">
+                            <li>📄 <strong>Stap 1:</strong> Typ een vraag of probleem in het invoerveld.</li>
+                            <li>🎙️ <strong>Stap 2:</strong> Gebruik de microfoonknop om te praten met de AI.</li>
+                            <li>🧠 <strong>Stap 3:</strong> Je krijgt direct een antwoord én je kunt het laten voorlezen.</li>
+                        </ul>
+                        <button
+                            onClick={handleDismissOnboarding}
+                            className="mt-4 px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+                        >
+                            Begin
+                        </button>
+                    </div>
+                </div>
+            )}
+
             {showMessage && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-2 mb-4 rounded text-sm max-w-lg mx-auto">
                     ✅ {showMessage}
@@ -224,6 +258,17 @@ export default function LocalePage() {
                             )}
                         </div>
                     )}
+                </div>
+            )}
+
+            {isAuthenticated && !showOnboarding && (
+                <div className="mt-6 text-center">
+                    <button
+                        onClick={() => setShowOnboarding(true)}
+                        className="text-sm text-zinc-500 hover:text-blue-600 transition"
+                    >
+                        ❓ Toon uitleg opnieuw
+                    </button>
                 </div>
             )}
         </main>
