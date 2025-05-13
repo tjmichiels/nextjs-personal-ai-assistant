@@ -42,6 +42,7 @@ export default function LocalePage() {
             return
         }
         if (type === 'signup') {
+            sessionStorage.setItem('forceShowOnboarding', 'true') // 🔥 force onboarding bij nieuwe account
             router.replace('/?success=confirmed')
         }
 
@@ -56,9 +57,12 @@ export default function LocalePage() {
 
     useEffect(() => {
         if (typeof window !== 'undefined' && isAuthenticated) {
-            const hasSeenOnboarding = localStorage.getItem('hasSeenOnboarding')
-            if (!hasSeenOnboarding) {
+            const forceShow = sessionStorage.getItem('forceShowOnboarding')
+            const hasSeen = localStorage.getItem('hasSeenOnboarding')
+
+            if (forceShow || !hasSeen) {
                 setShowOnboarding(true)
+                sessionStorage.removeItem('forceShowOnboarding')
             }
         }
     }, [isAuthenticated])

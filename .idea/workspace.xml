@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="TTS gefixt ik ben goated wtf">
+    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="userstory 1.5 uitgewerkt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/page.tsx" afterDir="false" />
     </list>
@@ -104,7 +104,8 @@
       <workItem from="1744805242306" duration="876000" />
       <workItem from="1747043553462" duration="486000" />
       <workItem from="1747044053558" duration="3373000" />
-      <workItem from="1747075462839" duration="1392000" />
+      <workItem from="1747075462839" duration="2689000" />
+      <workItem from="1747126821306" duration="856000" />
     </task>
     <task id="LOCAL-00001" summary="resolved">
       <option name="closed" value="true" />
@@ -154,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747076371352</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="userstory 1.5 uitgewerkt">
+      <option name="closed" value="true" />
+      <created>1747077034344</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747077034344</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +187,7 @@
     <MESSAGE value="mogelijk gemaakt om een soort text to speech in elkaar gefixt te hebben. (Let op dat dit alleen momenteel met Google Chrome werkt en niet met browsers zoals Brave)" />
     <MESSAGE value="styling van de spreek knop aangepast" />
     <MESSAGE value="TTS gefixt ik ben goated wtf" />
-    <option name="LAST_COMMIT_MESSAGE" value="TTS gefixt ik ben goated wtf" />
+    <MESSAGE value="userstory 1.5 uitgewerkt" />
+    <option name="LAST_COMMIT_MESSAGE" value="userstory 1.5 uitgewerkt" />
   </component>
 </project>
