@@ -8,6 +8,7 @@ import {useEffect, useState} from 'react'
 import {supabase} from '@/lib/supabaseClient'
 import {User} from '@supabase/supabase-js'
 import {useTranslations} from 'next-intl'
+import Image from 'next/image'
 
 export default function Header({locale}: { locale: string }) {
     const pathname = usePathname()
@@ -34,9 +35,25 @@ export default function Header({locale}: { locale: string }) {
         router.refresh() // herlaad pagina om auth status te resetten
     }
 
+    const logoSrc = theme === 'dark'
+        ? '/logos/windesheim_dark.png'
+        : '/logos/windesheim_light.png'
+
     return (
         <header className="flex items-center justify-between px-4 py-2 border-b">
-            <Link href={`/${locale}`} className="font-bold text-xl">{t('project_name')}</Link>
+            {/*<Link href={`/${locale}`} className="font-bold text-xl">{t('project_name')}</Link>*/}
+            <div className="flex items-center gap-3">
+                <Image
+                    src={logoSrc}
+                    alt="Windesheim logo"
+                    width={120}
+                    height={40}
+                    priority
+                />
+                <Link href={`/${locale}`} className="font-bold text-xl">
+                    {t('project_name')}
+                </Link>
+            </div>
 
             <div className="flex gap-4 items-center">
                 {/* 🌍 Locale switcher */}

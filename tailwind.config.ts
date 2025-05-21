@@ -1,5 +1,5 @@
 module.exports = {
-    darkMode: 'class', // ✅ activeer class-based dark mode!
+    darkMode: 'class',
     content: ['./app/**/*.tsx', './components/**/*.tsx'],
     theme: {
         extend: {
@@ -10,7 +10,7 @@ module.exports = {
                 error: '#EF4444',
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
+                sans: ['var(--font-roboto)', 'sans-serif'],
             },
         },
     },

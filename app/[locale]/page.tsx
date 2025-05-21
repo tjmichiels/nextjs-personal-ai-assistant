@@ -176,13 +176,22 @@ export default function LocalePage() {
             )}
 
             <div className="text-center mb-10">
-                <h1 className="text-3xl font-bold mb-4">{t('welcome')}</h1>
+                {/*<h1 className="text-3xl font-bold mb-4">{t('welcome')}</h1>*/}
+                <h1 className="text-3xl font-bold italic mb-4 flex items-center justify-center gap-1">
+                    <img
+                        src="/assets/windesheim.svg"
+                        alt="W"
+                        className="size-11 -mr-2 align-text-bottom inline-block"
+                    />
+                    {t('welcome')}
+                </h1>
                 <p>{t('description')}</p>
             </div>
 
             {isAuthenticated && (
-                <div className="max-w-3xl mx-auto bg-[var(--background)] border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-md p-6">
-                    <div className="flex justify-between items-center mb-4">
+                <div
+                    className="max-w-3xl mx-auto bg-[var(--background)] border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-md p-6">
+                <div className="flex justify-between items-center mb-4">
                         <h2 className="text-xl font-semibold">{t('ask_assistant')}</h2>
 
                         <div className="flex items-center">

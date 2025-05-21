@@ -1,32 +1,30 @@
-import {Geist, Geist_Mono} from "next/font/google";
-import "./globals.css";
-import {Analytics} from "@vercel/analytics/react"
-import {Providers} from "@/app/providers"; // Web Analytics
+// app/layout.tsx
+import './globals.css'
+import { Roboto } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
+import { Providers } from '@/app/providers'
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
-
+const roboto = Roboto({
+    subsets: ['latin'],
+    weight: ['400', '700'],
+    style: ['normal', 'italic'],
+    variable: '--font-roboto',
+    display: 'swap',
+})
 
 export default function RootLayout({
                                        children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+                                   }: {
+    children: React.ReactNode
+}) {
     return (
-        <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <html lang="nl" className={roboto.variable}>
+        <body className="font-sans antialiased">
         <Providers>
             <Analytics />
             {children}
         </Providers>
         </body>
         </html>
-    );
+    )
 }
