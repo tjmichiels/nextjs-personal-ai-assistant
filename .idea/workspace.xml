@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="Windesheim huisstijl">
-      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
-    </list>
+    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="small font change" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +180,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747830925573</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed localization">
+      <option name="closed" value="true" />
+      <created>1747831340090</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747831340090</updated>
+    </task>
+    <task id="LOCAL-00010" summary="small font change">
+      <option name="closed" value="true" />
+      <created>1747831499166</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747831499166</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +222,8 @@
     <MESSAGE value="TTS gefixt ik ben goated wtf" />
     <MESSAGE value="userstory 1.5 uitgewerkt" />
     <MESSAGE value="Windesheim huisstijl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Windesheim huisstijl" />
+    <MESSAGE value="Fixed localization" />
+    <MESSAGE value="small font change" />
+    <option name="LAST_COMMIT_MESSAGE" value="small font change" />
   </component>
 </project>
