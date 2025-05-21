@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="resolved">
+    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="userstory 1.5 uitgewerkt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,8 +12,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -22,12 +34,12 @@
     &quot;assignee&quot;: &quot;MasinVEVO&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/tjmichiels/nextjs-personal-ai-assistant.git",
-    "accountId": "81a88b2f-ff96-4223-a570-361f9abf64b6"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tjmichiels/nextjs-personal-ai-assistant.git&quot;,
+    &quot;accountId&quot;: &quot;f4be401f-586d-43c6-b48f-59b2c5c44bdb&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -35,6 +47,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2voFw6qgrWKt4RKjHkrMgL2WcZH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,21 +60,39 @@
     "Node.js.request.ts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
+    "git-widget-placeholder": "Masin",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\Gebruiker\\WebstormProjects\\nextjs-personal-ai-assistant\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
       </set>
     </attachedChunks>
   </component>
@@ -73,7 +106,10 @@
       <updated>1744803757634</updated>
       <workItem from="1744803760408" duration="1282000" />
       <workItem from="1744805242306" duration="876000" />
-      <workItem from="1746700238588" duration="952000" />
+      <workItem from="1747043553462" duration="486000" />
+      <workItem from="1747044053558" duration="3373000" />
+      <workItem from="1747075462839" duration="2689000" />
+      <workItem from="1747126821306" duration="856000" />
     </task>
     <task id="LOCAL-00001" summary="resolved">
       <option name="closed" value="true" />
@@ -83,7 +119,55 @@
       <option name="project" value="LOCAL" />
       <updated>1744803930735</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="momenteel wat errors die ik nu aan het fixen ben">
+      <option name="closed" value="true" />
+      <created>1746720081491</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746720081491</updated>
+    </task>
+    <task id="LOCAL-00003" summary="gefixt i know ik ben goated">
+      <option name="closed" value="true" />
+      <created>1746720605521</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1746720605521</updated>
+    </task>
+    <task id="LOCAL-00004" summary="mogelijk gemaakt om een soort text to speech in elkaar gefixt te hebben. (Let op dat dit alleen momenteel met Google Chrome werkt en niet met browsers zoals Brave)">
+      <option name="closed" value="true" />
+      <created>1747047887345</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747047887345</updated>
+    </task>
+    <task id="LOCAL-00005" summary="styling van de spreek knop aangepast">
+      <option name="closed" value="true" />
+      <created>1747049125301</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747049125301</updated>
+    </task>
+    <task id="LOCAL-00006" summary="TTS gefixt ik ben goated wtf">
+      <option name="closed" value="true" />
+      <created>1747076371352</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747076371352</updated>
+    </task>
+    <task id="LOCAL-00007" summary="userstory 1.5 uitgewerkt">
+      <option name="closed" value="true" />
+      <created>1747077034344</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747077034344</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,7 +186,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="resolved" />
-    <MESSAGE value="uhhh" />
-    <option name="LAST_COMMIT_MESSAGE" value="uhhh" />
+    <MESSAGE value="momenteel wat errors die ik nu aan het fixen ben" />
+    <MESSAGE value="gefixt i know ik ben goated" />
+    <MESSAGE value="mogelijk gemaakt om een soort text to speech in elkaar gefixt te hebben. (Let op dat dit alleen momenteel met Google Chrome werkt en niet met browsers zoals Brave)" />
+    <MESSAGE value="styling van de spreek knop aangepast" />
+    <MESSAGE value="TTS gefixt ik ben goated wtf" />
+    <MESSAGE value="userstory 1.5 uitgewerkt" />
+    <option name="LAST_COMMIT_MESSAGE" value="userstory 1.5 uitgewerkt" />
   </component>
 </project>
