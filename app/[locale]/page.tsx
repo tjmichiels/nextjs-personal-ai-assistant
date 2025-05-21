@@ -181,7 +181,7 @@ export default function LocalePage() {
                     <img
                         src="/assets/windesheim.svg"
                         alt="W"
-                        className="size-11 -mr-2 align-text-bottom inline-block"
+                        className="size-12 -mr-2 align-text-bottom inline-block"
                     />
                     {t('welcome')}
                 </h1>
