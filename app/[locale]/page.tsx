@@ -110,7 +110,7 @@ export default function LocalePage() {
     const startListening = () => {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
         if (!SpeechRecognition) {
-            setError('Deze browser ondersteunt geen spraakherkenning.')
+            setError(t('speech_not_supported'))
             return
         }
 
@@ -153,17 +153,17 @@ export default function LocalePage() {
             {showOnboarding && (
                 <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
                     <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-lg max-w-md p-6 space-y-4 text-center text-zinc-800 dark:text-white">
-                        <h2 className="text-2xl font-bold mb-4">Welkom bij je AI Coach 👋</h2>
+                        <h2 className="text-2xl font-bold mb-4">{t('onboarding_title')}</h2>
                         <ul className="space-y-3 text-left">
-                            <li>📄 <strong>Stap 1:</strong> Typ een vraag of probleem in het invoerveld.</li>
-                            <li>🎙️ <strong>Stap 2:</strong> Gebruik de microfoonknop om te praten met de AI.</li>
-                            <li>🧠 <strong>Stap 3:</strong> Je krijgt direct een antwoord én je kunt het laten voorlezen.</li>
+                            <li>{t('onboarding_step1')}</li>
+                            <li>{t('onboarding_step2')}</li>
+                            <li>{t('onboarding_step3')}</li>
                         </ul>
                         <button
                             onClick={handleDismissOnboarding}
                             className="mt-4 px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
                         >
-                            Begin
+                            {t('onboarding_button')}
                         </button>
                     </div>
                 </div>
@@ -239,7 +239,7 @@ export default function LocalePage() {
                                     isListening ? 'bg-green-800' : 'bg-green-600 hover:bg-green-700'
                                 }`}
                             >
-                                {isListening ? (t('Luistert...') || 'Luistert...') : (t('Spreek in') || 'Spreek in')}
+                                {isListening ? t('listening') || 'Luistert...' : t('speak_now') || 'Spreek in'}
                             </button>
                         </div>
                     </form>
@@ -266,7 +266,7 @@ export default function LocalePage() {
                                     onClick={() => new Audio(audioSrc).play()}
                                     className="text-sm text-blue-600 hover:underline"
                                 >
-                                    🗣️ Speel antwoord af
+                                    {t('play_audio')}
                                 </button>
                             )}
                         </div>
@@ -280,7 +280,7 @@ export default function LocalePage() {
                         onClick={() => setShowOnboarding(true)}
                         className="text-sm text-zinc-500 hover:text-blue-600 transition"
                     >
-                        ❓ Toon uitleg opnieuw
+                        {t('show_onboarding')}
                     </button>
                 </div>
             )}

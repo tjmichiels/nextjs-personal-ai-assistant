@@ -26,5 +26,16 @@
   "answer": "Antwoord:",
   "example_response": "Dit is een voorbeeld resultaat voor je prompt:",
   "error_message": "Er is een fout opgetreden tijdens het verwerken van je verzoek.",
-  "error": "Fout"
+  "error": "Fout",
+  "onboarding_title": "Welkom bij je AI Coach 👋",
+  "onboarding_step1": "📄 Stap 1: Typ een vraag of probleem in het invoerveld.",
+  "onboarding_step2": "🎙️ Stap 2: Gebruik de microfoonknop om te praten met de AI.",
+  "onboarding_step3": "🧠 Stap 3: Je krijgt direct een antwoord én je kunt het laten voorlezen.",
+  "onboarding_button": "Begin",
+  "play_audio": "🗣️ Speel antwoord af",
+  "show_onboarding": "❓ Toon uitleg opnieuw",
+  "speech_not_supported": "Deze browser ondersteunt geen spraakherkenning.",
+  "speech_failed": "Spraakherkenning is mislukt: ",
+  "listening": "Luistert...",
+  "speak_now": "Spreek in"
 }

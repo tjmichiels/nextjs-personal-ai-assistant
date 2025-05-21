@@ -26,5 +26,16 @@
   "answer": "Answer:",
   "example_response": "This is an example response for your prompt:",
   "error_message": "An error occurred while processing your request.",
-  "error": "Error"
+  "error": "Error",
+  "onboarding_title": "Welcome to your AI Coach 👋",
+  "onboarding_step1": "📄 Step 1: Type a question or issue in the input field.",
+  "onboarding_step2": "🎙️ Step 2: Use the microphone button to talk to the AI.",
+  "onboarding_step3": "🧠 Step 3: You'll get an answer right away and can have it read aloud.",
+  "onboarding_button": "Start",
+  "play_audio": "🗣️ Play response",
+  "show_onboarding": "❓ Show explanation again",
+  "speech_not_supported": "This browser does not support speech recognition.",
+  "speech_failed": "Speech recognition failed: ",
+  "listening": "Listening...",
+  "speak_now": "Speak now"
 }
