@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="Windesheim huisstijl">
+    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="reCAPTCHA ingesteld">
+      <change afterPath="$PROJECT_DIR$/app/[locale]/components/FAQ.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/faq.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +73,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\Gebruiker\\WebstormProjects\\nextjs-personal-ai-assistant\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -121,7 +122,8 @@
       <workItem from="1747075462839" duration="2689000" />
       <workItem from="1747126821306" duration="856000" />
       <workItem from="1748257340179" duration="217000" />
-      <workItem from="1748257590727" duration="680000" />
+      <workItem from="1748257590727" duration="4217000" />
+      <workItem from="1748263012395" duration="446000" />
     </task>
     <task id="LOCAL-00001" summary="resolved">
       <option name="closed" value="true" />
@@ -187,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747830925573</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="reCAPTCHA ingesteld">
+      <option name="closed" value="true" />
+      <created>1748258538082</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748258538082</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +223,7 @@
     <MESSAGE value="TTS gefixt ik ben goated wtf" />
     <MESSAGE value="userstory 1.5 uitgewerkt" />
     <MESSAGE value="Windesheim huisstijl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Windesheim huisstijl" />
+    <MESSAGE value="reCAPTCHA ingesteld" />
+    <option name="LAST_COMMIT_MESSAGE" value="reCAPTCHA ingesteld" />
   </component>
 </project>

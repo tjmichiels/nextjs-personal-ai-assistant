@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useRouter } from '@/i18n/navigation'
 import { useSearchParams } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
+import FAQ from './components/FAQ'
 
 export default function LocalePage() {
     const t = useTranslations()
@@ -42,7 +43,7 @@ export default function LocalePage() {
             return
         }
         if (type === 'signup') {
-            sessionStorage.setItem('forceShowOnboarding', 'true') // 🔥 force onboarding bij nieuwe account
+            sessionStorage.setItem('forceShowOnboarding', 'true')
             router.replace('/?success=confirmed')
         }
 
@@ -176,7 +177,6 @@ export default function LocalePage() {
             )}
 
             <div className="text-center mb-10">
-                {/*<h1 className="text-3xl font-bold mb-4">{t('welcome')}</h1>*/}
                 <h1 className="text-3xl font-bold italic mb-4 flex items-center justify-center gap-1">
                     <img
                         src="/assets/windesheim.svg"
@@ -191,9 +191,8 @@ export default function LocalePage() {
             {isAuthenticated && (
                 <div
                     className="max-w-3xl mx-auto bg-[var(--background)] border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-md p-6">
-                <div className="flex justify-between items-center mb-4">
+                    <div className="flex justify-between items-center mb-4">
                         <h2 className="text-xl font-semibold">{t('ask_assistant')}</h2>
-
                         <div className="flex items-center">
                             <label htmlFor="model-select" className="mr-2 text-sm">
                                 {t('model') || 'Model'}:
@@ -235,9 +234,7 @@ export default function LocalePage() {
                             <button
                                 type="button"
                                 onClick={startListening}
-                                className={`px-4 py-2 rounded-md transition text-white ${
-                                    isListening ? 'bg-green-800' : 'bg-green-600 hover:bg-green-700'
-                                }`}
+                                className={`px-4 py-2 rounded-md transition text-white ${isListening ? 'bg-green-800' : 'bg-green-600 hover:bg-green-700'}`}
                             >
                                 {isListening ? t('listening') || 'Luistert...' : t('speak_now') || 'Spreek in'}
                             </button>
@@ -284,6 +281,9 @@ export default function LocalePage() {
                     </button>
                 </div>
             )}
+
+            {/* FAQ knop rechtsonder */}
+            <FAQ />
         </main>
     )
 }
