@@ -7,6 +7,7 @@
     <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="Naam aangepast naar Windy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="FAQ aangemaakt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +61,7 @@
     &quot;Node.js.request.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Masin&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
@@ -72,7 +74,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\thoju\\WebstormProjects\\Personal_AI_Assistant-NextJS\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Gebruiker\\WebstormProjects\\nextjs-personal-ai-assistant\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -118,6 +120,8 @@
       <workItem from="1747044053558" duration="3373000" />
       <workItem from="1747075462839" duration="2689000" />
       <workItem from="1747126821306" duration="856000" />
+      <workItem from="1749117888604" duration="700000" />
+      <workItem from="1749717661536" duration="742000" />
       <workItem from="1749026082667" duration="665000" />
       <workItem from="1749718740492" duration="517000" />
     </task>
@@ -185,23 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747830925573</updated>
     </task>
-    <task id="LOCAL-00009" summary="Fixed localization">
+    <task id="LOCAL-00009" summary="FAQ aangemaakt">
       <option name="closed" value="true" />
-      <created>1747831340090</created>
+      <created>1749717741947</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1747831340090</updated>
+      <updated>1749717741947</updated>
     </task>
-    <task id="LOCAL-00010" summary="small font change">
-      <option name="closed" value="true" />
-      <created>1747831499166</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1747831499166</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,8 +223,7 @@
     <MESSAGE value="TTS gefixt ik ben goated wtf" />
     <MESSAGE value="userstory 1.5 uitgewerkt" />
     <MESSAGE value="Windesheim huisstijl" />
-    <MESSAGE value="Fixed localization" />
-    <MESSAGE value="small font change" />
-    <option name="LAST_COMMIT_MESSAGE" value="small font change" />
+    <MESSAGE value="FAQ aangemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="FAQ aangemaakt" />
   </component>
 </project>

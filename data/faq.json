@@ -1,0 +1,26 @@
+{
+  "nl": [
+    {
+      "question": "Hoe reset ik mijn wachtwoord?",
+      "shortAnswer": "Klik op 'Wachtwoord vergeten' op de loginpagina.",
+      "link": "/nl/reset-password"
+    },
+    {
+      "question": "Wat als de AI geen antwoord geeft?",
+      "shortAnswer": "De AI is soms niet beschikbaar, probeer het later opnieuw.",
+      "link": "/nl/contact"
+    }
+  ],
+  "en": [
+    {
+      "question": "How do I reset my password?",
+      "shortAnswer": "Click 'Forgot password' on the login page.",
+      "link": "/en/reset-password"
+    },
+    {
+      "question": "What if the AI doesn't respond?",
+      "shortAnswer": "Sometimes the AI is unavailable. Try again later.",
+      "link": "/en/contact"
+    }
+  ]
+}
