@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="fff">
+    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="Naam aangepast naar Windy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +23,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Thomas" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +37,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/tjmichiels/nextjs-personal-ai-assistant.git&quot;,
-    &quot;accountId&quot;: &quot;f4be401f-586d-43c6-b48f-59b2c5c44bdb&quot;
+    &quot;accountId&quot;: &quot;81a88b2f-ff96-4223-a570-361f9abf64b6&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -60,7 +60,8 @@
     &quot;Node.js.request.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Thomas&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
@@ -99,7 +100,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -117,6 +118,8 @@
       <workItem from="1747044053558" duration="3373000" />
       <workItem from="1747075462839" duration="2689000" />
       <workItem from="1747126821306" duration="856000" />
+      <workItem from="1749026082667" duration="665000" />
+      <workItem from="1749718740492" duration="517000" />
     </task>
     <task id="LOCAL-00001" summary="resolved">
       <option name="closed" value="true" />
