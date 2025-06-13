@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="Naam aangepast naar Windy">
+    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="Channged EN welcome message">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/nl.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/nl.json" afterDir="false" />
     </list>
-    <list default="true" id="39b8b9ed-777d-4493-8a2f-1140757483a5" name="Changes" comment="FAQ aangemaakt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +75,6 @@
     &quot;Node.js.request.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Masin&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
@@ -138,6 +138,7 @@
       <workItem from="1749717661536" duration="742000" />
       <workItem from="1749026082667" duration="665000" />
       <workItem from="1749718740492" duration="517000" />
+      <workItem from="1749803084500" duration="776000" />
     </task>
     <task id="LOCAL-00001" summary="resolved">
       <option name="closed" value="true" />
@@ -219,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749718617261</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Channged EN welcome message">
+      <option name="closed" value="true" />
+      <created>1749719418594</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749719418594</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +255,7 @@
     <MESSAGE value="userstory 1.5 uitgewerkt" />
     <MESSAGE value="Windesheim huisstijl" />
     <MESSAGE value="FAQ aangemaakt" />
-    <option name="LAST_COMMIT_MESSAGE" value="FAQ aangemaakt" />
+    <MESSAGE value="Channged EN welcome message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Channged EN welcome message" />
   </component>
 </project>
